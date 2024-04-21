@@ -1,2 +1,5 @@
 # Cross-Platform-Gateway-IP-Fetcher
-A C++ program that retrieves the local network gateway IP address on Windows, Linux, and macOS platforms using native APIs and system calls.
+
+One-line description: A C++ program that retrieves the local network gateway IP address on Windows, Linux, and macOS platforms using native APIs and system calls.
+
+Summary: This C++ program provides a unified interface to fetch the local network gateway IP address, tailored for different operating systems: Windows, Linux, and macOS. On Windows, it uses Winsock API functions to initialize network services and retrieve the best route to zero, which typically represents the gateway. On Linux, it parses the `/proc/net/route` file to find the default route and extracts the gateway IP address. For macOS, it uses `sysctl` calls to access the system's routing table and find the route marked as a gateway. Each platform-specific block of code is wrapped in preprocessor directives to ensure it compiles and runs only on the appropriate system. This approach allows for direct execution of platform-specific networking tasks without external libraries, showcasing how to handle system-specific networking features in C++.
